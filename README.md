@@ -1,4 +1,6 @@
-# PHP-CS-Fixer Docker Development Environment  
+# PHP-CS-Fixer Docker Development Environment 
+
+[![Build Status](https://travis-ci.org/hamdrew/PHP-CS-Fixer-Docker.svg?branch=master)](https://travis-ci.org/hamdrew/PHP-CS-Fixer-Docker) 
   
 This repository contains a Docker Compose configuration to support development within the [FriendsOfPHP/PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) project.   
    
