@@ -1,0 +1,22 @@
+os: linux
+dist: xenial
+language: php
+
+services:
+  - docker
+
+env:
+  global:
+    - DOCKER_COMPOSE_VERSION=1.27.4
+    - PHP_CS_FIXER_PROJECT_DIR=.
+
+before_install:
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+
+script:
+  - docker-compose build php8
+  - docker-compose up -d php8
+  - docker-compose exec php8 composer --version
