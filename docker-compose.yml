@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+
+    php8:
+        build:
+            context: php8
+        image: php-cs-fixer-php8
+        ports:
+            - "9000:9000"
+        volumes:
+            - "${PHP_CS_FIXER_PROJECT_DIR}/:/usr/src/PHP-CS-Fixer"
+            - "${PHP_CS_FIXER_PROJECT_DIR}/vendor:/usr/src/PHP-CS-Fixer/vendor:cached"
+            - "/usr/src/PHP-CS-Fixer/dev-tools/vendor"
+        working_dir: "/usr/src/PHP-CS-Fixer"
